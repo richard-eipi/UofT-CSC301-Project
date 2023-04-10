@@ -1,9 +1,8 @@
 # MicroSurvey Iframe Pass Through
 
-- Team 5 - InvictusCoding
 - Demo video: https://youtu.be/w1XqjQ7l9vc
-- Front-end work is done in this repo: https://github.com/zzqjames/csc301-frontend-shared-repo
-- Backend-end work is done in this repo: https://github.com/cheapreats/ce
+- Architecture: https://wolfbeacon.atlassian.net/wiki/spaces/CW/pages/2997944397/MicroSurvey+Architecture
+- Backend-end work is done separately on this repo: https://github.com/cheapreats/ce
 
 ## Description
 MicroSurvey Iframe Pass Through is an extension of an existing web application designed by our partner Ralph. The existing application, Centro, is a b-to-c software facing individuals and households who want to efficiently track their personal or household finances to make more informed life decisions and plans. It allows its users to report their financial activities and provides visualized analytics to help them make progress toward financial goals.
@@ -142,39 +141,3 @@ vi .env
 nx serve sba-survey-api
 ```
 For GraphQL development, follow the exact same flow but go to the sba-api package.
-
-## Deployment and Github Workflow
-
-* Naming Conventions: camelCase.
-
-* Front-end workflow 1 (iframe holder):
-1. Create a repository for the survey holder, https://github.com/zzqjames/survey-holder.
-2. Work directly in the main branch as this part does not require too much code and this way should be the most efficient.
-    1. Create style.css for the style of the survey holder.
-    2. Create index.html for the content of the survey holder.
-    3. Use iframe to allow the the survey holder to hold the survey.
-
-* Front-end workflow 2 (survey app):
-1. Create a frontend repository for the frontend including survey app, https://github.com/zzqjames/csc301-frontend-shared-repo
-2. Work on different components. Make a pull request when have an update and merge if it is neccessary:
-    1. Implement more question types. Multiple choice (dropdown menu), slider, short answer question.
-    2. Implement user input validation. I.e. verify user answer before send to backend API.
-    3. Refine the style of the HTML interface.
-3. Create a repository for the deployment of survey app https://github.com/zzqjames/csc301-project, and copy the code from the corresponding code from the frontend repository. Then, deploy the survey app and then get the link which can access survey app https://zzqjames.github.io/csc301-project/.
-
-* Back-end workflow & deployment:
-1. Create a new branch on the Cheapreats repo: https://github.com/cheapreats/ce.
-2. Write code in that new branch to update our JSON-RPC API by modifying two packages: sba-survey-api and sba-survey-api-def.
-    1. Add database models and API handlers in sba-survey-api.
-    2. Add type definitions of objects and input/output types of the API handlers in sba-survey-api-def.
-3. Create a pull request which needs to pass a few checks in GitHub Actions such as prettify code and CI.
-4. Partner reviews the pull request and approves it.
-5. We merge the pull request and delete the branch.
-6. The updated version of our JSON-RPC API is deployed automatically at midnight.
-
-GraphQL workflow is exactly the same. This particular workflow is chosen because it is required by our partner and it works well with their existing development workflow.
-
-## Licenses 
-
-* We will apply MIT license to my codebase because choosing the MIT license strikes a balance between protecting the rights of the developers and encouraging the free and open use of the code by others. It provides clear guidelines for how the code can be used, while at the same time minimizing legal risks and restrictions.
-* MIT license promotes the free and open use of code, which can lead to increased collaboration, innovation, and creativity in the development community. It also provides clear guidelines for how the code can be used, while minimizing legal risks and restrictions.
