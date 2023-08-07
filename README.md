@@ -130,7 +130,7 @@ sudo npm install -g nx
 
 npm install https://github.com/cheapreats/ce
 ```
-* Set the URL of the MongoDB database that you are going to use in the .env file of the sba-survey-api package
+* Set the URL of the MongoDB database that you are going to use in the .env file of the sba-survey-api package.
 ```
 cd packages/sba-survey-api
 
